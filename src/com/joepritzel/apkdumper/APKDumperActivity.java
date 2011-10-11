@@ -2,6 +2,8 @@ package com.joepritzel.apkdumper;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import android.app.Activity;
@@ -36,6 +38,16 @@ public class APKDumperActivity extends Activity {
 		// Creates a list of all apps, and their ApplicationInfo objects.
 		PackageManager pm = getPackageManager();
 		List<ApplicationInfo> appinfo_list = pm.getInstalledApplications(0);
+		
+		// Sorts list into alphabetical order
+		Collections.sort(appinfo_list, new Comparator<ApplicationInfo>() {
+
+			public int compare(ApplicationInfo app, ApplicationInfo app1) {
+				return app.packageName.compareTo(app1.packageName);
+			}
+			
+		});
+		
 		for (ApplicationInfo appinfo : appinfo_list) {
 			final CustomButton b = new CustomButton(this, appinfo);
 			b.setOnClickListener(new OnClickListener() {
