@@ -1,0 +1,10 @@
+.*
+*~
+!.gitignore
+build
+bin
+out
+classes
+lib
+doc
+*.jar
