@@ -1,4 +1,4 @@
 APK Dumper
-----------
+==========
 
 This app lists all the applications on your phone and will copy selected app's APK files to the SD card. If the phone is rooted AND the app is in a read-protected directory it will attempt to gain superuser privileges, and use busybox to copy the file.  This is app is useful for backing up other apps, or just to get the APKs onto your computer.
